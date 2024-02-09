@@ -8,14 +8,30 @@ FKProgressCircle is a lightweight library for rendering circular progress with a
 
 ## Installation
 
-Currently use manual installation (just copy-paste the code into new swift class and you're ready to go)
+### Cocoapods
 
-### WIP
+Simply add this library on your Podfile, and then do the ```pod install``` command
 
-## Documentation
-
-### WIP
+```pod 'FKProgressCircle', :git => "https://github.com/fuadkhairi/FKProgressCircle.git"```
 
 ## Usage
 
-### WIP
+```swift
+// add FKProgressCircle to your view, its up to you for using outlet or programmatically
+@IBOutlet weak var fkProgress: FKProgressCircle!
+
+// set your custom arrow image
+fkProgress.arrowImage = UIImage(systemName: "arrow.right")
+
+// set your progress trail color
+fkProgress.progressColor = .white
+
+// set the track color of progress
+fkProgress.trackColor = .red
+
+// set the duration to fill the progress value
+fkProgress.duration = 3.0
+
+// set your progress value (0 to 1.0)
+fkProgress.setProgressValue(value: 0.75)
+```
