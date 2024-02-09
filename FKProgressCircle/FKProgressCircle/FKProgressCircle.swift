@@ -8,7 +8,25 @@
 import Foundation
 import UIKit
 
+@available(iOS 13.0, *)
 public class FKProgressCircle: UIView {
+    public var progressColor:UIColor = UIColor.green {
+        didSet {
+            progressLayer.strokeColor = progressColor.cgColor
+        }
+    }
+    
+    public var trackColor:UIColor = UIColor.white {
+        didSet {
+            tracklayer.strokeColor = trackColor.cgColor
+        }
+    }
+    
+    public var arrowImage: UIImage? = UIImage(systemName: "arrow.right")?.withTintColor(.white, renderingMode: .alwaysOriginal) {
+        didSet {
+            progressArrow.contents = arrowImage?.cgImage
+        }
+    }
     
     fileprivate var progressLayer = CAShapeLayer()
     fileprivate var tracklayer = CAShapeLayer()
@@ -23,24 +41,6 @@ public class FKProgressCircle: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createCircularPath()
-    }
-    
-    public var progressColor:UIColor = UIColor.green {
-        didSet {
-            progressLayer.strokeColor = progressColor.cgColor
-        }
-    }
-    
-    public var trackColor:UIColor = UIColor.white {
-        didSet {
-            tracklayer.strokeColor = trackColor.cgColor
-        }
-    }
-    
-    public var arrowImage: UIImage? = UIImage(systemName: "arrow.right")?.withTintColor(.white) {
-        didSet {
-            progressArrow.contents = arrowImage?.cgImage
-        }
     }
     
     public var duration: TimeInterval = 2.0
