@@ -1,8 +1,8 @@
 ## FKProgressCircle
 
-<!--<p align="center">-->
-<!--<img src="./.github/demo.gif"/>-->
-<!--</p>-->
+<p align="center">
+<img src="./.github/demo.gif"/>
+</p>
 
 FKProgressCircle is a lightweight library for rendering circular progress with an icon(arrow) as value indicator.
 
